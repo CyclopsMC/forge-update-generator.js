@@ -45,7 +45,8 @@
     "build": "tsc",
     "build-watch": "tsc --watch",
     "validate": "npm ls",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "version": "manual-git-changelog onversion"
   },
   "dependencies": {
     "@types/jsdom": "^16.2.6",
