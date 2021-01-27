@@ -1,0 +1,56 @@
+{
+  "name": "forge-update-generator",
+  "version": "1.0.0",
+  "description": "Generates Forge update JSON files from CurseForge",
+  "main": "index.js",
+  "repository": "git@github.com:CyclopsMC/forge-update-generator.js.git",
+  "bugs": {
+    "url": "https://github.com/CyclopsMC/forge-update-generator.js/issues"
+  },
+  "bin": {
+    "cyclops-version-detector": "bin/generate.js"
+  },
+  "homepage": "https://github.com/CyclopsMC/forge-update-generator.js#readme",
+  "author": "Ruben Taelman <rubensworks@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "bin/**/*.d.ts",
+    "bin/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.js",
+    "index.d.ts",
+    "index.js"
+  ],
+  "pre-commit": [
+    "build",
+    "lint"
+  ],
+  "devDependencies": {
+    "@rubensworks/eslint-config": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.1.1",
+    "eslint": "^7.9.0",
+    "eslint-config-es": "^3.23.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-tsdoc": "^0.2.7",
+    "eslint-plugin-unused-imports": "^0.1.3",
+    "pre-commit": "^1.2.2",
+    "manual-git-changelog": "^1.0.0",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts --cache",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "validate": "npm ls",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@types/minimist": "^1.2.1",
+    "@types/node": "^14.14.22",
+    "cross-fetch": "^3.0.6",
+    "minimist": "^1.2.5"
+  }
+}
