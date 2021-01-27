@@ -5,6 +5,9 @@
 
 Generates [Forge update JSON files](https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/) from [CurseForge](https://www.cfwidget.com/).
 
+[Have a look here](https://github.com/CyclopsMC/Versions/blob/master/.github/workflows/update-forge-files.yml) to see an example
+on how to regularly auto-update Forge update files via a scheduled GitHub action.
+
 ## Installation
 
 ```bash
