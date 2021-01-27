@@ -8,7 +8,7 @@
     "url": "https://github.com/CyclopsMC/forge-update-generator.js/issues"
   },
   "bin": {
-    "cyclops-version-detector": "bin/generate.js"
+    "forge-update-generator": "bin/generate.js"
   },
   "homepage": "https://github.com/CyclopsMC/forge-update-generator.js#readme",
   "author": "Ruben Taelman <rubensworks@gmail.com>",
