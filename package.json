@@ -1,6 +1,6 @@
 {
   "name": "forge-update-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates Forge update JSON files from CurseForge",
   "main": "index.js",
   "repository": "git@github.com:CyclopsMC/forge-update-generator.js.git",
