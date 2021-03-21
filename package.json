@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.1.1",
     "eslint": "^7.9.0",
-    "eslint-config-es": "3.28.16",
+    "eslint-config-es": "3.28.18",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^24.0.2",
