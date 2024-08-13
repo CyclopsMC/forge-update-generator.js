@@ -59,6 +59,16 @@ Will output to standard output something in the form of:
 
 Entries are sorted by file upload date.
 
+By default, mods for the Forge modloader will be fetched, but any other modloader can be fetched as follows:
+
+```bash
+$ forge-update-generator cyclops-core NeoForge
+```
+
+```bash
+$ forge-update-generator cyclops-core Fabric
+```
+
 ### Experimental: Generate update file and fetch changelogs
 
 If you pass the `-c` option, changelogs will be fetched from their respective CurseForge page.

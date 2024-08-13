@@ -8,10 +8,10 @@ import { ForgeUpdateJsonCreator } from '../lib/ForgeUpdateJsonCreator';
 
 // Process CLI args
 const args = minimist(process.argv.slice(2));
-if (args.help || args._.length !== 1) {
-  process.stdout.write(`forge-update-generator Detects new Cyclops mod versions
+if (args.help || !(args._.length === 1 || args._.length === 2)) {
+  process.stdout.write(`forge-update-generator Detects new mod versions
 Usage:
-  forge-update-generator modname
+  forge-update-generator modname [modloader]
 Options:
   -c            if changelogs should be fetched from CurseForge via HTML scraping
   --help        print this help message
@@ -20,12 +20,13 @@ Options:
 }
 
 async function run(): Promise<void> {
+  const modLoader = args._[1];
   const dataCurseforge = await new CurseforgeLoader().load(args._[0]);
   const changelogLoader = args.c ? new CurseforgeChangelogLoader() : new DeferredChangelogLoader();
   if ('initialize' in changelogLoader) {
     await changelogLoader.initialize();
   }
-  const dataForge = await new ForgeUpdateJsonCreator(changelogLoader).generate(dataCurseforge);
+  const dataForge = await new ForgeUpdateJsonCreator(changelogLoader).generate(dataCurseforge, modLoader);
   if ('deinitialize' in changelogLoader) {
     await changelogLoader.deinitialize();
   }

@@ -11,7 +11,7 @@ export class ForgeUpdateJsonCreator {
     this.changelogLoader = changelogLoader;
   }
 
-  public async generate(dataCurseforge: ICurseforgeData): Promise<IForgeUpdateData> {
+  public async generate(dataCurseforge: ICurseforgeData, modLoader?: string): Promise<IForgeUpdateData> {
     const dataForge: IForgeUpdateData = {
       homepage: dataCurseforge.urls.curseforge,
       promos: {},
@@ -21,9 +21,9 @@ export class ForgeUpdateJsonCreator {
     const latestMcVersions: Record<string, string> = {};
     const recommendedMcVersions: Record<string, string> = {};
     for (const file of dataCurseforge.files) {
-      if (file.versions.includes('Forge')) {
+      if (file.versions.includes(modLoader || 'Forge')) {
         // Determine MC and mod version
-        const mcVersion = file.version;
+        const mcVersion: string = file.versions.find(version => version.includes('.'))!;
         const match = /-([^-]*)\.jar/u.exec(file.name);
         if (!match) {
           continue;
