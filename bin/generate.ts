@@ -37,3 +37,4 @@ run().catch((error: Error) => {
   console.error(error.stack);
   process.exit(1);
 });
+/* eslint-enable no-console */
