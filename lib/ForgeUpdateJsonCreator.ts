@@ -21,7 +21,7 @@ export class ForgeUpdateJsonCreator {
     const latestMcVersions: Record<string, string> = {};
     const recommendedMcVersions: Record<string, string> = {};
     for (const file of dataCurseforge.files) {
-      if (file.versions.includes(modLoader || 'Forge')) {
+      if (file.type === 'release' && file.versions.includes(modLoader || 'Forge')) {
         // Determine MC and mod version
         const mcVersion: string = file.versions.find(version => version.includes('.'))!;
         const match = /-([^-]*)\.jar/u.exec(file.name);
