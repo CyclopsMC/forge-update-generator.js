@@ -31,7 +31,7 @@ export class CurseforgeChangelogLoader {
     }
 
     // Fetch HTML (via puppeteer to bypass Cloudflare)
-    await this.page.setUserAgent(UserAgent.toString());
+    await this.page.setUserAgent(new UserAgent().toString());
     await this.page.goto(fileUrl);
     const content = await this.page.content();
 
