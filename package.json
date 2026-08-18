@@ -52,7 +52,6 @@
     "@types/jsdom": "^16.2.6",
     "@types/minimist": "^1.2.1",
     "@types/node": "^24.0.0",
-    "@types/puppeteer": "^5.4.2",
     "@types/user-agents": "^1.0.0",
     "cross-fetch": "^4.0.0",
     "jsdom": "^16.4.0",

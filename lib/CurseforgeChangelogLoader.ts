@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
 import type { Browser, Page } from 'puppeteer';
-const puppeteer = require('puppeteer');
+import { launch } from 'puppeteer';
 const userAgent = require('user-agents');
 
 /**
@@ -11,7 +11,7 @@ export class CurseforgeChangelogLoader {
   private page: Page | undefined;
 
   public async initialize(): Promise<void> {
-    this.browser = <Browser> await puppeteer.launch({
+    this.browser = await launch({
       // Headless: false,
       defaultViewport: null,
       // SlowMo: 10,
