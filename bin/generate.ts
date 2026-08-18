@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-import minimist = require('minimist');
+import minimist from 'minimist';
 import { CurseforgeChangelogLoader } from '../lib/CurseforgeChangelogLoader';
 import { CurseforgeLoader } from '../lib/CurseforgeLoader';
 import { DeferredChangelogLoader } from '../lib/DeferredChangelogLoader';

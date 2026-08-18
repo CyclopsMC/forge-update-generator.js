@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom';
 import type { Browser, Page } from 'puppeteer';
 import { launch } from 'puppeteer';
-const userAgent = require('user-agents');
+import UserAgent from 'user-agents';
 
 /**
  * A changelog loader that scrapes the changelog contents from CurseForge.
@@ -31,7 +31,7 @@ export class CurseforgeChangelogLoader {
     }
 
     // Fetch HTML (via puppeteer to bypass Cloudflare)
-    await this.page.setUserAgent(userAgent.toString());
+    await this.page.setUserAgent(UserAgent.toString());
     await this.page.goto(fileUrl);
     const content = await this.page.content();
 

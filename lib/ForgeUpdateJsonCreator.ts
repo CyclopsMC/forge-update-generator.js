@@ -21,7 +21,7 @@ export class ForgeUpdateJsonCreator {
     const latestMcVersions: Record<string, string> = {};
     const recommendedMcVersions: Record<string, string> = {};
     for (const file of dataCurseforge.files) {
-      if (file.type === 'release' && file.versions.includes(modLoader || 'Forge')) {
+      if (file.type === 'release' && file.versions.includes(modLoader ?? 'Forge')) {
         // Determine MC and mod version
         const mcVersion: string = file.versions.find(version => version.includes('.'))!;
         const match = /-([^-]*)\.jar/u.exec(file.name);
@@ -34,7 +34,7 @@ export class ForgeUpdateJsonCreator {
         if (!dataForge[mcVersion]) {
           dataForge[mcVersion] = {};
         }
-        const mcVersionContainer: Record<string, string> = <any> dataForge[mcVersion];
+        const mcVersionContainer: Record<string, string> = <Record<string, string>> dataForge[mcVersion];
         mcVersionContainer[modVersion] = await this.changelogLoader.load(file.url);
 
         // Index mod version per mc version for determining promos
