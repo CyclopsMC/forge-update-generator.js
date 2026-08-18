@@ -49,7 +49,7 @@ Will output to standard output something in the form of:
     "1.1.20": "Download and changelog available at https://www.curseforge.com/minecraft/mc-mods/integrated-dynamics/files/3151360"
   },
   "1.12.2": {
-    "1.1.11": "Download and changelog available at https://www.curseforge.com/minecraft/mc-mods/integrated-dynamics/files/3159505",
+    "1.1.11": "Download and changelog available at https://www.curseforge.com/minecraft/mc-mods/integrated-dynamics/files/3159505"
   },
   "1.15.2": {
     "1.1.20": "Download and changelog available at https://www.curseforge.com/minecraft/mc-mods/integrated-dynamics/files/3143042"

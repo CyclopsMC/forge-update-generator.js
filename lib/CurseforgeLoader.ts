@@ -13,14 +13,14 @@ export class CurseforgeLoader {
     }
 
     // Check for API errors
-    const dataRaw: CurseforgeDataRaw = await response.json();
+    const dataRaw: CurseforgeDataRaw = <CurseforgeDataRaw> await response.json();
     if ('error' in dataRaw) {
       throw new Error(`API Error (${dataRaw.error}): ${dataRaw.title}\n${dataRaw.message}`);
     }
 
     // Sort files by descending upload data
     dataRaw.files = dataRaw.files
-      .sort((fileA: any, fileB: any) => Date.parse(fileB.uploaded_at) - Date.parse(fileA.uploaded_at));
+      .sort((fileA, fileB) => Date.parse(fileB.uploaded_at) - Date.parse(fileA.uploaded_at));
 
     return dataRaw;
   }
@@ -40,6 +40,7 @@ export interface ICurseforgeData {
   type: string;
   urls: Record<string, string>;
   thumbnail: string;
+  // eslint-disable-next-line ts/naming-convention
   created_at: string;
   downloads: {
     monthly: number;
@@ -65,5 +66,6 @@ export interface ICurseforgeDataFile {
   filesize: number;
   versions: string[];
   downloads: number;
+  // eslint-disable-next-line ts/naming-convention
   uploaded_at: string;
 }
